@@ -17,9 +17,9 @@ def ceasar(cypherText):
             decypherText = decypherText + j
     return decypherText
 
-for i in listaCeasar:
-    codificado = ceasar(i)
-    print(codificado)
+#for i in listaCeasar:
+ #   codificado = ceasar(i)
+  #  print(codificado)
 
 listaAtbash = [""" KZKVI QZN WRKKVI HZBH: "ZFFTSDCJSTZWHZWFS!" ""","V. KOFIRYFH GIVNYOVB.","MLG S.T. DVOOH ZKKILEVW.",
                "HLIIB, WRKKVI, YFG BLFI DVMWB RH RM ZMLGSVI XZHGOV.","GSV RMERHRYOV DRAZIW RH DZGXSRMT.",
@@ -32,10 +32,15 @@ def atbash(cypherText):
     for j in cypherText:
         if 65 <= ord(j) and ord(j) <= 90:
             changed = ord(j)
-            if changed < 65:
-                changed = 90 + changed - (64)
-                #print("in")
+            if changed <= 77:
+                changed = 78 - changed + 77
+            else:
+                changed = 77 - changed + 78
             decypherText = decypherText + str(chr(changed))
         else:
             decypherText = decypherText + j
     return decypherText
+
+for i in listaAtbash:
+    code = atbash(i)
+    print(code)
